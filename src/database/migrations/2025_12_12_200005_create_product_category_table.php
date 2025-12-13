@@ -14,10 +14,8 @@ class CreateProductCategoryTable extends Migration
     public function up()
     {
         Schema::create('product_category', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('product_id')->constrained();
             $table->foreignId('category_id')->constrained();
-            $table->timestamps();
 
             $table->unique(['product_id', 'category_id'], 'unique_product_category');
         });
