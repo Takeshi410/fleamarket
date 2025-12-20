@@ -35,7 +35,7 @@ li {
     transform: translate(0%, -50%);
 }
 
-.header__inner--search {
+.header__inner__search {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -46,7 +46,7 @@ li {
     border: none;
 }
 
-.header__inner--nav {
+.header__inner__nav {
     position: absolute;
     justify-content: space-between;
     display: flex;

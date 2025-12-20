@@ -40,9 +40,15 @@ class Product extends Model
         return $this->belongsToMany(Category::class, 'product_category');
     }
 
-        public function likedUsers()
+    public function likedUsers()
     {
         return $this->belongsToMany(User::class, 'likes')
+                    ->withTimestamps();
+    }
+
+    public function purchasedUsers()
+    {
+        return $this->belongsToMany(User::class, 'purchases')
                     ->withTimestamps();
     }
 

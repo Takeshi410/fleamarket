@@ -5,11 +5,20 @@
 @endsection
 
 @section('header')
-    <input type="text" class="header__inner--search">
-    <nav class="header__inner--nav">
-        <li><a href="">ログイン</a></li>
-        <li><a href="">マイリスト</a></li>
-        <li><button>出品</button></li>
+    <input type="text" class="header__inner__search">
+    <nav class="header__inner__nav">
+        @if (Auth::check())
+            <form action="/logout" method="post">
+                @csrf
+            <li><button class="header__inner__button">ログアウト</button></li>
+            </form>
+            <li><a href="/mypage">マイページ</a></li>
+            <li><button>出品</button></li>
+        @else
+            <li><a href="/login">ログイン</a></li>
+            <li><a href="/login">マイページ</a></li>
+            <li><button>出品</button></li>
+        @endif
     </nav>
 @endsection
 
