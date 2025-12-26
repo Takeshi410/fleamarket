@@ -2,12 +2,26 @@ p {
     margin: 0px;
 }
 
-.content {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1540;
-    min-width: 1400px;
+@media screen and (max-width: 748px) {
+    .content {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 850px;
+        min-width: 480px;
+    }
 }
+
+@media screen and (min-width: 1400px) {
+.content {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1540;
+        min-width: 1400px;
+    }
+}
+
+
+
 
 .content__menu {
     border-bottom: 1px solid #000;

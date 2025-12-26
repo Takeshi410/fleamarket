@@ -11,18 +11,18 @@
             <form action="/login" method="post">
                 @csrf
                 <label for="email">メールアドレス</label>
-                <span>
+                <span class="error-massage">
                     @error('email')
                         {{ $message }}
                     @enderror
                 </span>
                 <input type="text" name="email">
                 <label for="password">パスワード</label>
-                <span>
+                <span class="error-massage">
                     @error('password')
                         {{ $message }}
                     @enderror
-                </span>
+                </span class="error-massage">
                 <input type="password" name="password">
                 <button class="login-form__button" type="submit">ログイン</button>
                 <div class="login-content__inner__register">

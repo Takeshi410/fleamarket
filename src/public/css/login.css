@@ -1,59 +1,123 @@
 
-.login-content {
-    margin: 0 auto;
-    padding: 0px;
-    width: 80%;
+@media screen and (max-width: 1399px) {
+    .login-content {
+        margin: 0 auto;
+        padding: 0px;
+        width: 80%;
     }
 
-.login-content__inner {
-    margin: 120px auto 0;
-    width: 100%;
-    max-width: 680px;
-    min-width: 480px;
+    .login-content__inner {
+        margin: 120px auto 0;
+        width: 100%;
+        max-width: 510px;
+        min-width: 360px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 24px;
+        font-size: 27px;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 10px;
+        height: 42px;
+        margin-bottom: 38px;
+        border: solid 1px #000;
+        font-size: 18px;
+    }
+
+    button {
+        text-align: center;
+        width: 100%;
+        height: 48px;
+        margin: 24px 0;
+        background-color: #FF5555;
+        color: #FFF;
+        border: none;
+        font-size: 18px;
+    }
+
+    .login-content__inner__register {
+        text-align: center;
+    }
+
+    .login-content__inner__register a {
+        color: #0073CC;
+        font-size: 15px;
+    }
+
+    .error-massage {
+        margin-left: 30px;
+        color: red;
+        font-size: 15px;
+    }
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 36px;
-}
 
-label {
-    font-size: 24px;
-}
+@media screen and (min-width: 1400px) {
+    .login-content {
+        margin: 0 auto;
+        padding: 0px;
+        width: 80%;
+    }
 
-input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0 10px;
-    height: 57px;
-    margin-bottom: 50px;
-    border: solid 1px #000;
-    font-size: 24px;
-}
+    .login-content__inner {
+        margin: 120px auto 0;
+        width: 100%;
+        max-width: 680px;
+        min-width: 480px;
+    }
 
-button {
-    text-align: center;
-    width: 100%;
-    height: 65px;
-    margin: 30px 0;
-    background-color: #FF5555;
-    color: #FFF;
-    border: none;
-    font-size: 24px;
-}
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 36px;
+    }
 
-.login-content__inner__register {
-    text-align: center;
-}
+    label {
+        font-size: 24px;
+    }
 
-a {
-    color: #0073CC;
-    font-size: 20px;
-}
+    input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 10px;
+        height: 57px;
+        margin-bottom: 50px;
+        border: solid 1px #000;
+        font-size: 24px;
+    }
 
-span {
-    margin-left: 40px;
-    color:red;
-    font-size: 20px;
+    button {
+        text-align: center;
+        width: 100%;
+        height: 65px;
+        margin: 30px 0;
+        background-color: #FF5555;
+        color: #FFF;
+        border: none;
+        font-size: 24px;
+    }
+
+    .login-content__inner__register {
+        text-align: center;
+    }
+
+    .login-content__inner__register a {
+        color: #0073CC;
+        font-size: 20px;
+    }
+
+    .error-massage {
+        margin-left: 40px;
+        color: red;
+        font-size: 20px;
+    }
 }

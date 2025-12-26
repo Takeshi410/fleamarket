@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('brand')->nullable();
             $table->text('description')->nullable();
             $table->foreignId('category_id')->constrained();
-            $table->string('image_path');
+            $table->string('file_name');
             $table->foreignId('condition_id')->constrained();
             $table->decimal('price')->nullable();
             $table->foreignId('user_id')->constrained();

@@ -18,43 +18,74 @@ li {
     padding: 0;
 }
 
-.header__inner {
-    height: 80px;
-    margin: 0 auto;
-    max-width: 1540;
-    min-width: 1400px;
-    position: relative;
+@media screen and (max-width: 1399px) {
+    .header__inner {
+        height: 60px;
+        margin: 0 auto;
+        min-width: 758px;
+        max-width: 850px;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__inner img {
+        width: 276px;
+        height: 27px;
+        margin-left: 22px;
+    }
+
+    .header__inner__search {
+        height: 27px;
+        width: 30%;
+        border-radius: 8px;
+        border: none;
+    }
+
+    .header__inner__nav {
+        justify-content: space-between;
+        display: flex;
+        width: 195px;
+        padding-right: 22px;
+        color: #fff;
+        font-size: 15px;
+    }
 }
 
-.header__inner img {
-    width: 370px;
-    height: 36px;
-    margin-left: 22px;
-    top: 50%;
-    position: absolute;
-    transform: translate(0%, -50%);
+@media screen and (min-width: 1400px) {
+    .header__inner {
+        height: 80px;
+        margin: 0 auto;
+        max-width: 1540px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__inner img {
+        width: 370px;
+        height: 36px;
+        margin-left: 22px;
+    }
+
+    .header__inner__search {
+        height: 36px;
+        width: 40%;
+        border-radius: 8px;
+        border: none;
+    }
+
+    .header__inner__nav {
+        justify-content: space-between;
+        display: flex;
+        width: 260px;
+        padding-right: 22px;
+        color: #fff;
+        font-size: 20px;
+    }
 }
 
-.header__inner__search {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 36px;
-    width: 400px;
-    border-radius: 8px;
-    border: none;
-}
 
-.header__inner__nav {
-    position: absolute;
-    justify-content: space-between;
-    display: flex;
-    width: 260px;
-    padding-right: 22px;
-    top: 50%;
-    left: 100%;
-    transform: translate(-100%, -50%);
-    color: #fff;
-    font-size: 20px;
-}
+
+
+
