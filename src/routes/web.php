@@ -15,5 +15,6 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/', [ProductController::class, 'index']);
+Route::get('/search', [ProductController::class, 'search']);
 
 Route::get('/mypage/profile', function (){return view('mypage.edit');});

@@ -13,7 +13,6 @@ class Product extends Model
         'product_name',
         'brand',
         'description',
-        'category_id',
         'image_path',
         'condition_id',
         'price',
@@ -52,4 +51,10 @@ class Product extends Model
                     ->withTimestamps();
     }
 
+    public function scopeKeywordSearch($query, $keyword){
+        if (!empty($keyword)) {
+            $query->where('product_name', 'like', '%' . $keyword . '%');
+        }
+        return $query;
+    }
 }

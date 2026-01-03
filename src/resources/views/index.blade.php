@@ -4,52 +4,27 @@
 <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @endsection
 
-@section('header')
-    <input type="text" class="header__inner__search">
-    <nav class="header__inner__nav">
-        @if (Auth::check())
-            <form action="/logout" method="post">
-                @csrf
-            <li><button class="header__inner__button">ログアウト</button></li>
-            </form>
-            <li><a href="/mypage">マイページ</a></li>
-            <li><button>出品</button></li>
-        @else
-            <li><a href="/login">ログイン</a></li>
-            <li><a href="/login">マイページ</a></li>
-            <li><button>出品</button></li>
-        @endif
-    </nav>
-@endsection
-
 @section('content')
 <div class="content">
     <nav class="content__menu">
-        <li class="content__menu__item">おすすめ<li>
-        <li class="content__menu__item">マイリスト<li>
+        <li class="{{ $tab === 'recommend' ? 'content__menu__item--active' : 'content__menu__item'}}"><a href="/">おすすめ</a><li>
+        <li class="{{ $tab === 'mylist' ? 'content__menu__item--active' : 'content__menu__item'}}"><a href="/?tab=mylist">マイリスト</a><li>
     </nav>
 
     <!-- 商品一覧 -->
     <div class="content__product">
+        @foreach ($products as $product)
         <div class="content__product__thumb">
-            <img src="{{ asset('img/product/000001_1.jpg') }}" alt="">
-            <p>時計</p>
+            <!-- <a href=""> -->
+            <img src="{{ asset('storage/images/products/' . $product['file_name']) }}" alt="{{ $product['file_name'] }}">
+            <!-- </a> -->
+            <p class="content__product__thumb--p">{{ $product['product_name'] }}
+                @if ($product['purchased_users_exists'])
+                    <span class="content__product__thumb--span">sold</span>
+                @endif
+            </p>
         </div>
-        <div class="content__product__thumb">
-            <img src="{{ asset('img/product/000002_1.jpg') }}" alt="">
-        </div>
-        <div class="content__product__thumb">
-            <img src="{{ asset('img/product/000003_1.jpg') }}" alt="">
-        </div>
-        <div class="content__product__thumb">
-            <img src="{{ asset('img/product/000004_1.jpg') }}" alt="">
-        </div>
-        <div class="content__product__thumb">
-            <img src="{{ asset('img/product/000005_1.jpg') }}" alt="">
-        </div>
-        <div class="content__product__thumb">
-            <img src="{{ asset('img/product/000006_1.jpg') }}" alt="">
-        </div>
+        @endforeach
     </div>
 
 </div>

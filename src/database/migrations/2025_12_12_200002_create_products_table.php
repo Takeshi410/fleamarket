@@ -18,7 +18,6 @@ class CreateProductsTable extends Migration
             $table->string('product_name')->nullable();
             $table->string('brand')->nullable();
             $table->text('description')->nullable();
-            $table->foreignId('category_id')->constrained();
             $table->string('file_name');
             $table->foreignId('condition_id')->constrained();
             $table->decimal('price')->nullable();

@@ -6,6 +6,7 @@ a {
 body {
     padding: 0;
     margin: 0;
+    font-family: "メイリオ", sans-serif;
 }
 
 li {
@@ -29,27 +30,52 @@ li {
         align-items: center;
     }
 
+
     .header__inner img {
         width: 276px;
         height: 27px;
-        margin-left: 22px;
+        vertical-align: middle;
     }
 
-    .header__inner__search {
-        height: 27px;
-        width: 30%;
-        border-radius: 8px;
+    .header__inner__form {
+        height: 36px;
+        width: 25%;
+    }
+
+    .header__inner__form--search {
+        width: 92%;
+        height: 100%;
+        border-radius: 4px;
         border: none;
+        padding: 0 4%;
+        font-size: 18px;
     }
 
     .header__inner__nav {
         justify-content: space-between;
         display: flex;
-        width: 195px;
+        align-items: center;
+        width: 240px;
         padding-right: 22px;
-        color: #fff;
-        font-size: 15px;
     }
+
+    .header__inner__nav__item {
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        text-decoration: none;
+        background: none;
+    }
+
+    .header__inner__nav__button {
+        background: #fff;
+        color: #000;
+        font-size: 16px;
+        width: 72px;
+        height: 36px;
+        border-radius: 4px;
+    }
+
 }
 
 @media screen and (min-width: 1400px) {
@@ -66,25 +92,50 @@ li {
         width: 370px;
         height: 36px;
         margin-left: 22px;
+        vertical-align: middle;
     }
 
-    .header__inner__search {
-        height: 36px;
+    .header__inner__form {
+        height: 50px;
         width: 40%;
-        border-radius: 8px;
+    }
+
+    .header__inner__form--search {
+        width: 96%;
+        height: 100%;
+        border-radius: 5px;
         border: none;
+        padding: 0 2%;
+        font-size: 24px;
     }
 
     .header__inner__nav {
         justify-content: space-between;
         display: flex;
-        width: 260px;
+        align-items: center;
+        width: 360px;
         padding-right: 22px;
+    }
+
+    .header__inner__nav__item {
         color: #fff;
-        font-size: 20px;
+        font-size: 24px;
+        border: none;
+        text-decoration: none;
+        background: none;
+        padding:0 ;
+        cursor: pointer;
+    }
+
+    .header__inner__nav__button {
+        background: #fff;
+        color: #000;
+        font-size: 24px;
+        width: 100px;
+        height: 50px;
+        border-radius: 4px;
     }
 }
-
 
 
 
