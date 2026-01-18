@@ -21,17 +21,17 @@ class Product extends Model
 
     public function users()
     {
-        return $this->$this->belongsTo(User::Class);
+        return $this->belongsTo(User::Class);
     }
 
     public function comments()
     {
-        return $this->$this->hasMany(Comment::Class);
+        return $this->hasMany(Comment::Class);
     }
 
-    public function conditions()
+    public function condition()
     {
-        return $this->$this->hasMany(Condition::Class);
+        return $this->belongsTo(Condition::Class);
     }
 
     public function categories()
@@ -42,13 +42,13 @@ class Product extends Model
     public function likedUsers()
     {
         return $this->belongsToMany(User::class, 'likes')
-                    ->withTimestamps();
+        ->withTimestamps();
     }
 
     public function purchasedUsers()
     {
         return $this->belongsToMany(User::class, 'purchases')
-                    ->withTimestamps();
+        ->withTimestamps();
     }
 
     public function scopeKeywordSearch($query, $keyword){

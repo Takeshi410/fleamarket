@@ -16,6 +16,6 @@ class Condition extends Model
 
     public function products()
     {
-        return $this->$this->belongsTo(Product::Class);
+        return $this->hasMany(Product::Class);
     }
 }

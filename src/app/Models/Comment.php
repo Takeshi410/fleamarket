@@ -16,14 +16,14 @@ class Comment extends Model
         'comment',
     ];
 
-    public function products()
+    public function product()
     {
-        return $this->$this->belongsTo(Product::Class);
+        return $this->belongsTo(Product::class);
     }
 
-    public function users()
+    public function user()
     {
-        return $this->$this->belongsTo(User::Class);
+        return $this->belongsTo(User::class);
     }
 
 }

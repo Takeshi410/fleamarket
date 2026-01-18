@@ -15,9 +15,9 @@
     <div class="content__product">
         @foreach ($products as $product)
         <div class="content__product__thumb">
-            <!-- <a href=""> -->
-            <img src="{{ asset('storage/images/products/' . $product['file_name']) }}" alt="{{ $product['file_name'] }}">
-            <!-- </a> -->
+            <a href="{{ route('item.detail', ['item_id' => $product['id']]) }}">
+                <img src="{{ asset('storage/images/products/' . $product['file_name']) }}" alt="{{ $product['file_name'] }}">
+            </a>
             <p class="content__product__thumb--p">{{ $product['product_name'] }}
                 @if ($product['purchased_users_exists'])
                     <span class="content__product__thumb--span">sold</span>

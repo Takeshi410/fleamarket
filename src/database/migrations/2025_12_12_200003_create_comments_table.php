@@ -16,10 +16,11 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id')->constrained();
-            $table->unsignedInteger('sequence')->nullable();
+            $table->unsignedInteger('sequence');
             $table->foreignId('user_id')->constrained();
-            $table->text('comment')->nullable();
+            $table->text('comment');
             $table->timestamps();
+            $table->unique(['product_id', 'sequence'], 'unique_product_id_sequence');
         });
     }
 

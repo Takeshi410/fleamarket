@@ -1,0 +1,212 @@
+
+@media screen and (max-width: 1399px) {
+    .content {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 850px;
+        min-width: 768px;
+    }
+
+    .content__user {
+        margin: 60px auto;
+        display: flex;
+        align-items: center;
+        width: 80%;
+    }
+
+    .content__user__avatar {
+        width: 116px;
+    }
+
+    .content__user__avatar img {
+        width: 116px;
+        height: 116px;
+        border-radius: 58px;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        background: #999;
+    }
+
+    .content__user__name {
+        font-size: 27px;
+        font-weight: bold;
+        margin: 0 0 0 50px;
+    }
+
+    .content__user__form {
+        margin-left: auto;
+    }
+
+    .content__user__form--button {
+        width: 232px;
+        height: 45px;
+        border-radius: 10px;
+        border: solid 2px #FF5555;
+        font-size: 20px;
+        color: #FF5555;
+        background: #FFF;
+    }
+
+    .content__menu {
+        border-bottom: 1px solid #000;
+        margin-top: 38px;
+        padding: 0 38px;
+        display: flex;
+    }
+
+    .content__menu__item {
+        color: #000;
+        font-size: 18px;
+        margin-right: 38px;
+    }
+
+    .content__menu__item--active {
+        color: #FF0000;
+        font-size: 18px;
+        margin-right: 38px;
+    }
+
+    .content__mypage {
+        margin: 38px auto 0;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 23px;
+    }
+
+    .content__mypage__thumb {
+        width: 200px;
+    }
+
+    .content__mypage__thumb img {
+        width: 200px;
+        height: 200px;
+        border-radius: 3px;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 4px;
+    }
+
+    .content__mypage__thumb p {
+        margin: 0px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .content__mypage__thumb span {
+        background: red;
+        color: #FFF;
+        text-align: center;
+        width: 45px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .content {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1540;
+        min-width: 1400px;
+    }
+
+    .content__user {
+        margin: 80px auto;
+        display: flex;
+        align-items: center;
+        width: 60%;
+    }
+
+    .content__user__avatar {
+        width: 150px;
+    }
+
+    .content__user__avatar img{
+        width: 150px;
+        height: 150px;
+        border-radius: 75px;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        background-color: #999;
+    }
+
+    .content__user__name {
+        font-size: 36px;
+        font-weight: bold;
+        margin: 0 0 0 50px;
+    }
+
+    .content__user__form {
+        margin-left: auto;
+    }
+
+    .content__user__form--button {
+        width: 310px;
+        height: 59px;
+        border-radius: 10px;
+        border: solid 2px #FF5555;
+        font-size: 26px;
+        color: #FF5555;
+        background: #FFF;
+    }
+
+    .content__menu {
+        border-bottom: 1px solid #000;
+        margin-top: 50px;
+        padding: 0 50px;
+        display: flex;
+    }
+
+    .content__menu__item {
+        color: #000;
+        font-size: 24px;
+        margin-right: 50px;
+    }
+
+    .content__menu__item--active {
+        color: #FF0000;
+        font-size: 24px;
+        margin-right: 50px;
+    }
+
+    .content__mypage {
+        margin: 50px auto 0;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .content__mypage__thumb {
+        width: 290px;
+    }
+
+    .content__mypage__thumb img {
+        width: 290px;
+        height: 290px;
+        border-radius: 4px;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 5px;
+    }
+
+    .content__mypage__thumb p {
+        margin: 0px;
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .content__mypage__thumb span {
+        background: red;
+        color: #FFF;
+        text-align: center;
+        width: 60px;
+    }
+}

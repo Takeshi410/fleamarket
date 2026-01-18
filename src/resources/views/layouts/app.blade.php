@@ -16,7 +16,7 @@
         <a href="/">
             <img src="{{ asset('img/default/logo.png') }}" alt="">
         </a>
-        @if (request()->is('/','search'))
+        @if (!request()->is('login','register'))
         <form action="/search" method="get" class="header__inner__form">
             @csrf
             <input type="text" name="keyword" class="header__inner__form--search" value="{{ request('keyword') }}" placeholder="なにをお探しですか？">
@@ -24,21 +24,19 @@
                 <input type="hidden" name="tab" value="mylist">
             @endif
         </form>
+        @endif
         <nav class="header__inner__nav">
             @if (Auth::check())
                 <form action="/logout" method="post">
                     @csrf
                 <li><button class="header__inner__nav__item">ログアウト</button></li>
                 </form>
-                <li><a class="header__inner__nav__item" href="/mypage">マイページ</a></li>
-                <li><button class="header__inner__nav__button">出品</button></li>
             @else
                 <li><a class="header__inner__nav__item" href="/login">ログイン</a></li>
-                <li><a class="header__inner__nav__item" href="/login">マイページ</a></li>
-                <li><button class="header__inner__nav__button">出品</button></li>
             @endif
+                <li><a class="header__inner__nav__item" href="/mypage">マイページ</a></li>
+                <li><button class="header__inner__nav__button">出品</button></li>
         </nav>
-        @endif
         @yield('header')
     </div>
 </header>

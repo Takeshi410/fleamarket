@@ -3,7 +3,7 @@
         margin: 0 auto;
         width: 100%;
         max-width: 850px;
-        min-width: 480px;
+        min-width: 768px;
     }
 
     .content__menu__item {
@@ -27,12 +27,12 @@
     }
 
     .content__product__thumb {
-        width: 180px;
+        width: 200px;
     }
 
     .content__product__thumb img {
-        width: 180px;
-        height: 180px;
+        width: 200px;
+        height: 200px;
         border-radius: 3px;
         display: block;
         object-fit: cover;
