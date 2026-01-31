@@ -26,6 +26,7 @@
         </form>
         @endif
         <nav class="header__inner__nav">
+            <ul>
             @if (Auth::check())
                 <form action="/logout" method="post">
                     @csrf
@@ -35,7 +36,8 @@
                 <li><a class="header__inner__nav__item" href="/login">ログイン</a></li>
             @endif
                 <li><a class="header__inner__nav__item" href="/mypage">マイページ</a></li>
-                <li><button class="header__inner__nav__button">出品</button></li>
+                <li><button onclick="location.href='/sell'" class="header__inner__nav__button">出品</button></li>
+            </ul>
         </nav>
         @yield('header')
     </div>

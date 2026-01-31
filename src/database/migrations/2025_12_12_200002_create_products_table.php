@@ -18,9 +18,9 @@ class CreateProductsTable extends Migration
             $table->string('product_name')->nullable();
             $table->string('brand')->nullable();
             $table->text('description')->nullable();
-            $table->string('file_name');
+            $table->string('image_path')->nullable();
             $table->foreignId('condition_id')->constrained();
-            $table->decimal('price')->nullable();
+            $table->integer('price')->nullable();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });

@@ -9,6 +9,18 @@ body {
     font-family: "メイリオ", sans-serif;
 }
 
+input, textarea, select, button {
+    font-family: "メイリオ", sans-serif;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    gap: 10px;
+}
+
 li {
     list-style: none;
 }
@@ -23,13 +35,12 @@ li {
     .header__inner {
         height: 60px;
         margin: 0 auto;
+        padding: 0 24px;
         min-width: 758px;
-        max-width: 850px;
         display:flex;
         justify-content: space-between;
         align-items: center;
     }
-
 
     .header__inner img {
         width: 276px;
@@ -39,7 +50,8 @@ li {
 
     .header__inner__form {
         height: 36px;
-        width: 26%;
+        width: 30%;
+        margin: 0 12px;
     }
 
     .header__inner__form--search {
@@ -52,37 +64,33 @@ li {
     }
 
     .header__inner__nav {
-        justify-content: space-between;
-        display: flex;
-        align-items: center;
         width: 240px;
-        padding-right: 22px;
     }
 
     .header__inner__nav__item {
         color: #fff;
-        font-size: 14px;
+        font-size: 16px;
         border: none;
         text-decoration: none;
         background: none;
     }
 
-    .header__inner__nav__button {
+    .header__inner__nav__sell {
         background: #fff;
         color: #000;
-        font-size: 14px;
+        font-size: 18px;
         width: 64px;
         height: 32px;
         border-radius: 4px;
         cursor: pointer;
     }
-
 }
 
 @media screen and (min-width: 1400px) {
     .header__inner {
         height: 80px;
         margin: 0 auto;
+        padding: 0 32px;
         max-width: 1540px;
         display: flex;
         justify-content: space-between;
@@ -99,6 +107,7 @@ li {
     .header__inner__form {
         height: 50px;
         width: 40%;
+        margin: 16px;
     }
 
     .header__inner__form--search {
@@ -111,11 +120,7 @@ li {
     }
 
     .header__inner__nav {
-        justify-content: space-between;
-        display: flex;
-        align-items: center;
         width: 360px;
-        padding-right: 22px;
     }
 
     .header__inner__nav__item {

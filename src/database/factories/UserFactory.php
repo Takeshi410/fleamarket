@@ -21,17 +21,10 @@ class UserFactory extends Factory
         'email' => $this->faker->unique()->safeEmail(),
         'password' => Hash::make('password'),
         'postcode' => sprintf('%07d', $this->faker->numberBetween(0, 9999999)),
-        'address' => $this->faker->address(),
+        'address' => $this->faker->prefecture() . $this->faker->city() . $this->faker->streetAddress(),
         'building' => $this->faker->secondaryAddress(),
         'avatar_path' => null,
         ];
-        // return [
-        //     'name' => $this->faker->name(),
-        //     'email' => $this->faker->unique()->safeEmail(),
-        //     'email_verified_at' => now(),
-        //     'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        //     'remember_token' => Str::random(10),
-        // ];
     }
 
     /**

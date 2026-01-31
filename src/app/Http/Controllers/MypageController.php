@@ -19,7 +19,7 @@ class MypageController extends Controller
             ->get();
 
         $buyProducts = Product::whereHas('purchasedUsers', function ($query) use ($user) {
-            $query->where('user_id', $user);
+            $query->where('user_id', $user->id);
         })->get();
 
         return view('mypages.index', compact('user', 'page', 'sellProducts', 'buyProducts'));
@@ -29,14 +29,16 @@ class MypageController extends Controller
     public function profile()
     {
         $user = auth()->user();
+        $from = request('from');
 
-        return view('mypages.profile', compact('user'));
+        return view('mypages.profile', compact('user', 'from'));
     }
 
 
     public function update(MypageRequest $request)
     {
         $user = auth()->user();
+
 
         $profile = $request->only(['username', 'postcode', 'address', 'building']);
 
@@ -48,7 +50,7 @@ class MypageController extends Controller
                 return back()->withErrors(['avatar' => '画像の読み込みに失敗しました。'])->withInput();
             }
 
-            $dir = storage_path('app/public/avatar');
+            $dir = storage_path('app/public/images/avatar');
 
             // 対象ディレクトリがない場合は作成
             if (!is_dir($dir)) {
@@ -66,6 +68,11 @@ class MypageController extends Controller
 
         $user->update($profile);
 
-        return redirect()->route('mypage.index');
+        //マイページから遷移した場合はマイページにリダイレクト
+        if ($request->input('from') === 'mypage') {
+            return redirect()->route('mypage.index');
+        }
+
+        return redirect()->route('index');
     }
 }

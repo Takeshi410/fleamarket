@@ -135,6 +135,7 @@ return [
         ],
         'username' => [
             'required' => 'お名前を入力してください',
+            'max' => 'お名前は20文字以内で入力してください',
         ],
         'email' => [
             'required' => 'メールアドレスを入力してください',
@@ -142,9 +143,13 @@ return [
         ],
         'password' => [
             'required' => 'パスワードを入力してください',
-            'confirmed' => 'パスワードと一致しません',
+            'confirmed' => '',
             'min' => 'パスワードは8文字以上で入力してください'
         ],
+        'password_confirmation' => [
+            'required' => '確認用パスワードを入力してください',
+            'same' =>'パスワードと一致しません',
+        ]
     ],
 
     /*

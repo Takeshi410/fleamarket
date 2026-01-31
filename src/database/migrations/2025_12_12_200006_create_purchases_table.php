@@ -19,7 +19,7 @@ class CreatePurchasesTable extends Migration
             $table->foreignId('product_id')->constrained();
             $table->timestamps();
 
-            $table->unique(['user_id', 'product_id'], 'unique_user_product');
+            $table->unique('product_id');
         });
     }
 

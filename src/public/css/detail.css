@@ -1,38 +1,39 @@
 @media screen and (max-width: 1399px) {
     .content {
-        width: 80%;
+        width: 740px;
         margin: 90px auto 0;
-        max-width: 850px;
-        min-width: 768px;
         display: flex;
         align-items: flex-start;
     }
 
     .content__left {
-        width: 50%;
-        padding: 27px 33px;
+        width: 370px;
+        padding: 27px 30px;
     }
 
     .content__left__photo {
-        width: 100%;
+        width: 310px;
+        height: 310px;
+        border-radius: 4px;
+        overflow: hidden;
+        background: #d9d9d9;
     }
 
     .content__left__photo img {
         width: 100%;
-        border-radius: 4px;
-        display: block;
+        height: 100%;
         object-fit: cover;
         object-position: center;
     }
 
     .content__right {
-        width: 50%;
-        padding: 0px 33px;
+        width: 370px;
+        padding: 0px 40px;
     }
 
     .content__right h2 {
         color: #000;
-        font-size: 36px;
+        font-size: 27px;
         font-weight: bold;
         margin: 39px 0 9px;
     }
@@ -44,7 +45,6 @@
         margin: 0;
         padding: 0;
     }
-
 
     .content__right__title {
         color: #000;
@@ -65,10 +65,10 @@
         color: #000;
         font-size: 33px;
         padding: 0;
-        margin: 21px 0 0 0 ;
+        margin: 21px 0 0 0;
     }
 
-    .content__right__price span{
+    .content__right__price span {
         font-size: 24px;
     }
 
@@ -88,13 +88,29 @@
         background: none;
     }
 
+    .content__right__table img {
+        height: 30px;
+    }
+
     .content__right__button {
+        width: 100%;
+        height: 42px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+        background: #ff5555;
+        border: none;
+    }
+
+    .content__right__button--sold {
         width: 100%;
         height: 42px;
         font-size: 24px;
         font-weight: bold;
-        color: #fff;
-        background: #FF5555;
+        text-align: center;
+        line-height: 42px;
+        color: #777;
+        background: #ccc;
         border: none;
     }
 
@@ -121,7 +137,7 @@
     }
     .content__right__category--tag {
         white-space: nowrap;
-        background: #D9D9D9;
+        background: #d9d9d9;
         height: 24px;
         font-size: 15px;
         padding: 0 15px;
@@ -148,7 +164,7 @@
     }
 
     .content__right__comment {
-        color: #5F5F5F;
+        color: #5f5f5f;
         font-size: 27px;
         font-weight: bold;
         margin: 39px 0 10px;
@@ -160,10 +176,18 @@
     }
 
     .content__right__user--avatar {
-        background: #D9D9D9;
+        background: #d9d9d9;
         width: 54px;
         height: 54px;
-        border-radius: 27px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .content__right__user--avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
     .content__right__user--name {
@@ -176,7 +200,7 @@
         padding: 8px;
         margin: 8px 0 24px;
         font-size: 15px;
-        background: #E5E5E5;
+        background: #e5e5e5;
         border-radius: 5px;
     }
 
@@ -186,7 +210,7 @@
         font-size: 15px;
     }
 
-    .content__right__error{
+    .content__right__error {
         color: red;
         font-size: 18px;
         margin: 8px 0 0;
@@ -195,7 +219,7 @@
 
 @media screen and (min-width: 1400px) {
     .content {
-        width: 80%;
+        width: 1360px;
         margin: 90px auto 0;
         max-width: 1540px;
         display: flex;
@@ -203,25 +227,28 @@
     }
 
     .content__left {
-        width: 50%;
+        width: 690px;
         padding: 36px 45px;
     }
 
     .content__left__photo {
-        width: 100%;
+        width: 600px;
+        height: 600px;
+        border-radius: 4px;
+        overflow: hidden;
+        background: #d9d9d9;
     }
 
     .content__left__photo img {
         width: 100%;
-        border-radius: 4px;
-        display: block;
+        height: 100%;
         object-fit: cover;
         object-position: center;
     }
 
     .content__right {
-        width: 50%;
-        padding: 0px 45px;
+        width: 690px;
+        padding: 0px 60px;
     }
 
     .content__right h2 {
@@ -238,7 +265,6 @@
         margin: 0;
         padding: 0;
     }
-
 
     .content__right__title {
         color: #000;
@@ -282,13 +308,29 @@
         background: none;
     }
 
+    .content__right__table img {
+        height: 40px;
+    }
+
     .content__right__button {
         width: 100%;
         height: 56px;
         font-size: 30px;
         font-weight: bold;
         color: #fff;
-        background: #FF5555;
+        background: #ff5555;
+        border: none;
+    }
+
+    .content__right__button--sold {
+        width: 100%;
+        height: 56px;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 56px;
+        color: #777;
+        background: #ccc;
         border: none;
     }
 
@@ -316,7 +358,7 @@
 
     .content__right__category--tag {
         white-space: nowrap;
-        background: #D9D9D9;
+        background: #d9d9d9;
         height: 30px;
         font-size: 20px;
         padding: 0 20px;
@@ -344,7 +386,7 @@
     }
 
     .content__right__comment {
-        color: #5F5F5F;
+        color: #5f5f5f;
         font-size: 36px;
         font-weight: bold;
         margin: 52px 0 10px;
@@ -356,10 +398,18 @@
     }
 
     .content__right__user--avatar {
-        background: #D9D9D9;
+        background: #d9d9d9;
         width: 70px;
         height: 70px;
-        border-radius: 35px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .content__right__user--avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
     .content__right__user--name {
@@ -372,7 +422,7 @@
         padding: 10px;
         margin: 10px 0 30px;
         font-size: 20px;
-        background: #E5E5E5;
+        background: #e5e5e5;
         border-radius: 5px;
     }
 
@@ -387,4 +437,8 @@
         font-size: 24px;
         margin: 10px 0 0;
     }
+}
+
+.content button {
+    cursor: pointer;
 }

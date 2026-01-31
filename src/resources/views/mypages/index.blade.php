@@ -8,16 +8,18 @@
 <div class="content">
     <div class="content__user">
         <div class="content__user__avatar">
-            <img src="{{ asset('storage/' . $user['avatar_path']) }}" alt="">
+            <img src="{{ asset('storage/images/' . $user['avatar_path']) }}" alt="">
         </div>
         <p class="content__user__name">{{ $user['username'] }}</p>
-        <form class="content__user__form" action="{{ route('mypage.profile') }}" method="get">
-            <button class="content__user__form--button">プロフィールを編集</button>
-        </form>
+        <div class="content__user__edit">
+        <a href="{{ route('mypage.profile', ['from' => 'mypage']) }}">プロフィールを編集</a>
+        </div>
     </div>
     <nav class="content__menu">
-        <li><a class="{{ $page === 'sell' ? 'content__menu__item--active' : 'content__menu__item'}}" href="{{ route('mypage.index', ['page' => 'sell']) }}">出品した商品</a><li>
-        <li><a class="{{ $page === 'buy' ? 'content__menu__item--active' : 'content__menu__item'}}" href="{{ route('mypage.index', ['page' => 'buy']) }}">購入した商品</a><li>
+        <ul>
+            <li><a class="{{ $page === 'sell' ? 'content__menu__item--active' : 'content__menu__item'}}" href="{{ route('mypage.index', ['page' => 'sell']) }}">出品した商品</a></li>
+            <li><a class="{{ $page === 'buy' ? 'content__menu__item--active' : 'content__menu__item'}}" href="{{ route('mypage.index', ['page' => 'buy']) }}">購入した商品</a></li>
+        </ul>
     </nav>
 
     <!-- 出品一覧 -->
@@ -25,9 +27,11 @@
         @if ($page === 'sell')
             @foreach ($sellProducts as $product)
             <div class="content__mypage__thumb">
-                <a href="{{ route('item.detail', ['item_id' => $product['id']]) }}">
-                    <img src="{{ asset('storage/images/products/' . $product['file_name']) }}" alt="{{ $product['file_name'] }}">
-                </a>
+                <div class="content__mypage__thumb__image">
+                    <a href="{{ route('item.detail', ['item_id' => $product['id']]) }}">
+                        <img src="{{ asset('storage/images/' . $product['image_path']) }}" alt="{{ $product['image_path'] }}">
+                    </a>
+                </div>
                 <p class="content__mypage__thumb--p">{{ $product['product_name'] }}
                     @if ($product['purchased_users_exists'])
                         <span class="content__mypage__thumb--span">sold</span>
@@ -38,9 +42,11 @@
         @elseif ($page === 'buy')
             @foreach ($buyProducts as $product)
             <div class="content__mypage__thumb">
-                <a href="">
-                    <img src="{{ asset('storage/images/products/' . $product['file_name']) }}" alt="{{ $product['file_name'] }}">
-                </a>
+                <div class="content__mypage__thumb__image">
+                    <a href="{{ route('item.detail', ['item_id' => $product['id']]) }}">
+                        <img src="{{ asset('storage/images/' . $product['image_path']) }}" alt="{{ $product['image_path'] }}">
+                    </a>
+                </div>
                 <p class="content__mypage__thumb--p">{{ $product['product_name'] }}
                     @if ($product['purchased_users_exists'])
                         <span class="content__mypage__thumb--span">sold</span>

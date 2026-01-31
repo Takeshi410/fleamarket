@@ -2,17 +2,19 @@
 
 ## Docker ビルド
 
-    ・git clone git@github.com:Takeshi410/fleamarket.git
-    ・docker-compose up -d --build
+    git clone git@github.com:Takeshi410/fleamarket.git
+    docker-compose up -d --build
 
 ## Laravel 環境構築
 
-    ・docker-compose exec php bash
-    ・composer install
-    ・cp .env.example .env , 環境変数を適宜変更
-    ・php artisan key:generate
-    ・php artisan migrate
-    ・php artisan db:seed
+    docker-compose exec php bash
+    composer install
+    composer require stripe/stripe-php
+
+### cp .env.example .env , 環境変数を適宜変更し下記コマンドを実行
+    php artisan key:generate
+    php artisan migrate
+    php artisan db:seed
 
 ## 開発環境
 

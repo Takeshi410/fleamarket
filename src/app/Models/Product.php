@@ -19,7 +19,7 @@ class Product extends Model
         'user_id',
     ];
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::Class);
     }
@@ -49,6 +49,11 @@ class Product extends Model
     {
         return $this->belongsToMany(User::class, 'purchases')
         ->withTimestamps();
+    }
+
+    public function shippingAddresses()
+    {
+        return $this->hasMany(ShippingAddress::class);
     }
 
     public function scopeKeywordSearch($query, $keyword){

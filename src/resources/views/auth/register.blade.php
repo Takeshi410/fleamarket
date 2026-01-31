@@ -32,6 +32,11 @@
                 </span>
                 <input type="password" name="password" />
                 <label for="password_confirmation">確認用パスワード</label>
+                <span>
+                    @error('password_confirmation')
+                        {{ $message }}
+                    @enderror
+                </span>
                 <input type="password" name="password_confirmation" />
                 <button class="register-form__button" type="submit">登録</button>
             </form>
