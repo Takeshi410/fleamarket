@@ -40,7 +40,7 @@
         <select name="condition" id="" class="content__condition">
             <option value="" disabled {{ old('condition') ? '' : 'selected' }}>選択してください</option>
             @foreach ($conditions as $condition)
-            <option value="{{ $condition['id'] }}"　{{ old('condition') === $condition['id'] ? 'selected' : '' }}>{{ $condition['condition'] }}</option>
+            <option value="{{ $condition['id'] }}" {{ old('condition') === $condition['id'] ? 'selected' : '' }}>{{ $condition['condition'] }}</option>
             @endforeach
         </select>
 
@@ -62,7 +62,7 @@
         @error('description')
             <span class="content__error">{{ $message }}</span>
         @enderror
-        <textarea name="description">{{ old('dexcription') }}</textarea>
+        <textarea name="description">{{ old('description') }}</textarea>
 
         <label  class="content__label" for="price">販売価格</label>
         @error('price')

@@ -6,7 +6,7 @@
     cd fleamarket
     docker-compose up -d --build
 
-    ※ MySQL は OS によって起動しない場合があるので、それぞれの PC に合わせて
+    //MySQL は OS によって起動しない場合があるので、それぞれの PC に合わせて
     　docker-compose.yml ファイルを編集してください。
 
 ### Laravel 環境構築
@@ -57,14 +57,72 @@
     phpmyadmin：http://localhost:8080/
     mailhog：http://localhost:8025/
 
-## 動作検証時の共有事項
+## 動作確認の共有事項
 
-ダーミーデータのユーザーでログインする場合は、usersテーブルに登録されたメールアドレスと下記パスワードでログインしてください。
+ダーミーデータのユーザーでログインする場合は、下記メールアドレスとパスワードでログインしてください。
 
+    メールアドレス：test@example.com
     パスワード：password
-    ※全ユーザー共通
 
 下記画面で画像登録機能の検証を行う際は、1MB以下の画像ファイルを使用してください。
 
     ・プロフィール編集画面
     ・商品出品画面
+
+## テストケース
+
+### テスト環境の構築
+
+#### DBの構築
+
+    docker-compose exec mysql bash
+    mysql -u root -p
+    CREATE DATABASE demo_test
+
+#### 環境構築
+
+    docker-compose exec php bash
+    cp .env .env.testing
+
+#### .env.testingファイルの環境変数を変更
+
+    接続情報を下記の通り変更
+    ・APP_ENV=test
+    ・APP_KEY=
+    ・DB_DATABASE=demo_test
+    ・DB_USERNAME=root
+    ・DB_PASSWORD=root
+
+    MAILの環境設定
+    ・"M"AIL_FROM_ADDRESS"に任意のメールアドレスを登録
+
+    決済サービス（Stripe）のAPIキーを設定
+    ・STRIPE_KEY を追加
+    ・STRIPE_SECRET を追加
+
+#### .env.testing変更後、下記コマンドを実行
+
+    php artisan key:generate --env=testing
+    php artisan config:clear
+    php artisan migrate --env=testing
+
+### テストの実行
+
+    vendor/bin/phpunit tests/Feature/RegisterTest.php
+    vendor/bin/phpunit tests/Feature/LoginTest.php
+    vendor/bin/phpunit tests/Feature/LogoutTest.php
+    vendor/bin/phpunit tests/Feature/ProductTest.php
+    vendor/bin/phpunit tests/Feature/MylistTest.php
+    vendor/bin/phpunit tests/Feature/ProductSearchTest.php
+    vendor/bin/phpunit tests/Feature/DetailTest.php
+    vendor/bin/phpunit tests/Feature/LikeTest.php
+    vendor/bin/phpunit tests/Feature/PurchaseTest.php
+    vendor/bin/phpunit tests/Feature/AddressTest.php
+    vendor/bin/phpunit tests/Feature/MypageTest.php
+    vendor/bin/phpunit tests/Feature/ProfileTest.php
+    vendor/bin/phpunit tests/Feature/SellTest.php
+    vendor/bin/phpunit tests/Feature/VerifyTest.php
+
+#### 補足
+
+    支払い方法選択機能はコーチ了承の上Javascriptで実装している為、テストケースは作成していません。

@@ -17,21 +17,18 @@ class ProductController extends Controller
     {
         $tab = $request->query('tab', 'recommend');
 
-        if ($tab === 'mylist' && !Auth::check()) {
-            return redirect()->guest(route('login'));
-        }
-
         $query = Product::with('likedUsers')->withExists('purchasedUsers');
 
         if (Auth::check()) {
             $query->where('products.user_id', '!=', Auth::id());
-
-            if ($tab === 'mylist') {
-                $query->whereHas('likedUsers', function ($q) {
-                    $q->where('users.id', Auth::id());
-                });
-            }
         }
+
+        if ($tab === 'mylist') {
+            $query->whereHas('likedUsers', function ($q) {
+                $q->where('users.id', Auth::id());
+            });
+        }
+
         $products = $query->get();
 
         return view('index', compact('products', 'tab'));
@@ -59,9 +56,9 @@ public function search(Request $request)
         }
 
         $products = $query->get();
-
         return view('index', compact('products', 'tab'));
     }
+
 
     public function detail ($item_id){
         $product = Product::with(['categories', 'condition', 'likedUsers', 'comments' => function ($query) {
@@ -70,8 +67,10 @@ public function search(Request $request)
         ])->withCount(['likedUsers as likes_count', 'comments as comments_count'])
         ->withExists('purchasedUsers')
         ->findOrFail($item_id);
+
         return view('detail', compact('product'));
     }
+
 
     public function storeComment(ProductRequest $request, $item_id)
     {
@@ -79,10 +78,8 @@ public function search(Request $request)
             return redirect()->route('item.detail', ['item_id' => $item_id]);
         }
 
-
         $nextSequence = Comment::where('product_id', $item_id)->max('sequence');
         $nextSequence = $nextSequence ? $nextSequence + 1 : 1;
-
         $comment = $request->input('comment');
 
         Comment::create([
@@ -94,6 +91,7 @@ public function search(Request $request)
 
         return redirect()->route('item.detail', ['item_id' => $item_id]);
     }
+
 
     public function toggleLike(Request $request, $item_id)
     {
@@ -158,7 +156,6 @@ public function search(Request $request)
         imagedestroy($image);
 
         $filepath = 'products/' . $filename;
-
         $product->update(['image_path' => $filepath]);
         $product->categories()->sync($sell['categories']);
 
