@@ -20,7 +20,7 @@ Route::get('/', [ProductController::class, 'index'])->name('index');
 Route::get('/search', [ProductController::class, 'search']);
 Route::get('/item/{item_id}', [ProductController::class, 'detail'])->name('item.detail');
 Route::post('/item/{item_id}/comment', [ProductController::class, 'storeComment'])->middleware('auth', 'verified')->name('item.comment.store');
-Route::post('/item/{item_id}/like', [ProductController::class, 'toggleLike'])->name('item.like.toggle');
+Route::post('/item/{item_id}/like', [ProductController::class, 'toggleLike'])->middleware('auth', 'verified')->name('item.like.toggle');
 Route::get('/sell', [ProductController::class, 'sell'])->middleware('auth', 'verified');
 Route::post('/sell', [ProductController::class, 'storeProduct'])->middleware('auth', 'verified');
 

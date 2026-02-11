@@ -77,7 +77,7 @@
 
     docker-compose exec mysql bash
     mysql -u root -p
-    CREATE DATABASE demo_test
+    CREATE DATABASE demo_test;
 
 #### 環境構築
 
@@ -93,13 +93,6 @@
     ・DB_USERNAME=root
     ・DB_PASSWORD=root
 
-    MAILの環境設定
-    ・"M"AIL_FROM_ADDRESS"に任意のメールアドレスを登録
-
-    決済サービス（Stripe）のAPIキーを設定
-    ・STRIPE_KEY を追加
-    ・STRIPE_SECRET を追加
-
 #### .env.testing変更後、下記コマンドを実行
 
     php artisan key:generate --env=testing
@@ -107,6 +100,8 @@
     php artisan migrate --env=testing
 
 ### テストの実行
+
+#### 下記コマンドを実行
 
     vendor/bin/phpunit tests/Feature/RegisterTest.php
     vendor/bin/phpunit tests/Feature/LoginTest.php

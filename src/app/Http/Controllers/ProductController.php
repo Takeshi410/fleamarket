@@ -95,10 +95,6 @@ public function search(Request $request)
 
     public function toggleLike(Request $request, $item_id)
     {
-        if (!Auth::check()) {
-            return redirect()->route('login');
-        }
-
         $like = Like::where('user_id', Auth::id())
             ->where('product_id', $item_id)
             ->first();
@@ -145,7 +141,11 @@ public function search(Request $request)
             'user_id' => $user['id'],
         ]);
 
-        $dir = storage_path('app/public/images/products');
+        // 保存先設定（テストの時はapp/testingディレクトリを使用）
+        $dir = app()->runningUnitTests()
+            ? storage_path('app/testing/images/products')
+            : storage_path('app/public/images/products');
+
         if (!is_dir($dir)) {
             mkdir($dir, 0755, true);
         }
